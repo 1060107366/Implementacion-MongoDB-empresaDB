@@ -1,0 +1,42 @@
+INSTRUCCIONES PARA EJECUTAR EL PROYECTO MONGODB
+
+Archivo principal:
+Implementacion_MongoDB_empresaDB.js
+
+Requisitos:
+1. Tener MongoDB Server instalado y en ejecución.
+2. Tener MongoDB Shell (mongosh) instalado.
+3. Para usar la conexión local predeterminada, MongoDB debe estar disponible en:
+   mongodb://localhost:27017
+
+Ejecución desde Windows:
+1. Copiar el archivo .js en una carpeta del equipo.
+2. Abrir CMD o PowerShell en esa carpeta.
+3. Ejecutar:
+   mongosh "mongodb://localhost:27017" --file "Implementacion_MongoDB_empresaDB.js"
+
+Ejecución desde otra terminal:
+mongosh "mongodb://localhost:27017" --file "Implementacion_MongoDB_empresaDB.js"
+
+¿Qué realiza el archivo?
+- Selecciona la base de datos empresaDB.
+- Crea las colecciones clientes, productos e interacciones si no existen.
+- Limpia los documentos de esas tres colecciones.
+- Inserta 100 clientes, 20 productos y 100 interacciones.
+- Ejecuta una demostración CRUD con un cliente temporal y luego lo elimina.
+- Ejecuta filtros, operadores, una consulta JOIN con $lookup y agregaciones.
+- Muestra los conteos finales.
+
+ADVERTENCIA:
+El script elimina todos los documentos existentes en las colecciones clientes,
+productos e interacciones antes de insertar los datos de prueba. No ejecutarlo
+sobre una base de datos que contenga información que se desee conservar.
+
+Resultado esperado al finalizar:
+- clientes: 100 documentos
+- productos: 20 documentos
+- interacciones: 100 documentos
+- total: 220 documentos
+
+El script no instala MongoDB ni inicia el servidor; estos componentes deben
+estar instalados y disponibles previamente.
